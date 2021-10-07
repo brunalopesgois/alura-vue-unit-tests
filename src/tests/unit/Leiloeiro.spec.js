@@ -60,6 +60,7 @@ describe('Um leiloreiro exibe os lances existentes', () => {
     const alerta = wrapper.find('.alert-dark')
     expect(alerta.exists()).toBe(false)
   })
+
   test('Possui uma lista de lances', async () => {
     getLeilao.mockResolvedValueOnce(leilao)
     getLances.mockResolvedValueOnce(lances)
@@ -87,6 +88,7 @@ describe('Um leiloeiro comunica os valores de menor e maior lance', () => {
     const maiorLance = wrapper.find('.maior-lance').element
     expect(maiorLance.textContent).toContain('Maior lance: R$ 1099')
   })
+
   test('Mostra o menor lance daquele leilão', async () => {
     getLeilao.mockResolvedValueOnce(leilao)
     getLances.mockResolvedValueOnce(lances)
